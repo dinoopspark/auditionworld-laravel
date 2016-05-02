@@ -1,8 +1,17 @@
 /bootstrap/compiled.php
 /vendor
+/nbproject
+/public/assets/admin_images
+/public/assets/event_video
+/public/assets/images
+/public/assets/new_theme
+/public/assets/profile
+/public/assets/protofolio
 composer.phar
 composer.lock
 .env.*.php
 .env.php
 .DS_Store
 Thumbs.db
+
+

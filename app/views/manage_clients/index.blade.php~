@@ -1,0 +1,30 @@
+@extends('layouts.admin')
+@section('main')
+		<h1>All Users</h1>
+
+@if(Auth::user()->user_type=="admin")
+<p style="line-height:32px;float:right;font-size:16px;">{{ link_to_route('users.create', 'Add new user') }}</p>
+@endif
+<table class="table table-striped table-bordered">
+		<thead>
+			<tr>
+				<th>Id</th>
+				<th>UserId</th>
+				<th>Api Key</th>
+				
+			</tr>
+		</thead>
+		<tbody>
+			@foreach($manage_clients as $client)
+			<tr>
+				<td>{{$client->id}}</td>
+				<td>{{$client->name}}</td>
+				<td>{{$client->api_key}}</td>
+				<td><a href="" class="btn btn-info">View</td>
+				<td><a href="/manage_clients_edit/{{$client->id}}" class ='btn btn-info'>Edit</a><td>
+				<td><a href="/manage_clients_delete/{{$client->id}}" class="btn btn-danger">Delete</td>
+			</tr>
+			@endforeach
+		</tbody>
+</table>
+@stop
